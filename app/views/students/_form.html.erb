@@ -1,0 +1,61 @@
+<%= form_for(student, url: apply_online_path, html: {method: 'post'}) do |f| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> detected! Please review and correct the errors:</h2>
+
+      <ul>
+      <% student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="field">
+    <%= f.label :'First Name' %>
+    <%= f.text_field :fname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Last Name' %>
+    <%= f.text_field :lname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Degree Level'  %>
+    <%= f.collection_select(:level_id, Level.all, :id, :leveltype, prompt: "Select A Degree Type", :class => 'net-select') %>
+   </div>
+
+  <div class="field">
+    <%= f.label :'Course' %>
+    <%= f.collection_select(:course_id, Course.all, :id, :coursename, prompt: "Select Course", :class => 'net-select') %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Nationality' %>
+    <%= f.country_select :nationality, prompt: "Country of Origin", :class => 'net-select' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Country of Choice' %>
+    <%= f.country_select :countryloc, prompt: "Where Would You Like to Study?", :class => 'net-select' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Email' %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'Phone' %>
+    <%= f.text_field :phone %>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= f.submit @student.new_record? ? "Apply Now" : "Update Student Details" %> 
+  </div>
+<% end %>

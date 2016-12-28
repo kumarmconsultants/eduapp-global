@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Global Edutech</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<header>
+            <div class="parentContainer">
+                <div id="socialButtons">
+                    <a href="#" id="linked">
+                        <p>Connect width linked </p> 
+                        <span>linked </span>
+                    </a>
+                    <a href="#" id="facebook">
+                        <p>Like Us on Facebook </p> 
+                        <span>Facebook</span>
+                    </a>
+                </div>
+            </div>
+            <div>
+        
+                <div id="menu">
+                    <section>
+                        <a href="index.html"><%= image_tag("logo.png", :alt => "Logo") %></a>
+                        <ul class="clearfix">
+                            <li class="selected"><%= link_to 'Home', root_path %></li>
+                            <% if user_signed_in? %>
+                                <li><%= link_to 'Online Application', apply_online_path %> </li>
+                                <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+                            <% else %>
+                                <li><%= link_to 'Apply Online', new_user_registration_path %> </li>
+                                <li><%= link_to 'Agents', contact_path %></li>
+                            <% end %>
+                            <li><%= link_to 'About Us', about_path %></li>
+                            <li><%= link_to 'Application Status', contact_path %></li>
+
+                            <li><%= link_to 'Contact Us', contact_path %></li>
+                        </ul>
+                    </section>
+                </div>
+                <div id="tagline">
+                    <section>
+                        <a href="http://tracks.com">“Admissions Open for <strong>2017</strong>”</a>
+                    </section>
+                </div>
+                <div id="info">
+                    <section>
+                        <div>
+                            <%= image_tag("phone.png", :alt => "Logo") %>
+                            <h2>+603 40420004</h2>
+                            <h4>Suite 02-02, 2nd floor Wisma Tan Kim San <br/>
+N0, 518A, 3re Mile Jalan Ipoh 52100 <br />Kuala Lumpur, Malaysia</h4>
+                        </div>
+                        <span class="element leftElement"></span>
+                        <span class="triangle">triangle</span>
+                    </section>
+                </div>               
+            </div>    
+            
+        </header>
+        
+        
+       
+    <%= yield %>
+
+     <p class="notice"><%= notice %></p> 
+                    <p class="alert"><%= alert %></p>
+
+    <footer>
+
+            <div class="stripe clearfix">
+                
+                </div>
+            </div>
+
+            
+            <div id="footerContent" >
+                <section>
+                    <div class="clearfix">
+
+                        <div class="links column c-30 clearfix ">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Apply Online</a></li>
+                                <li><a href="#">Application Status</a></li>
+                                <li><a href="#">About Us</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="news column c-40 clearfix">
+                            <h3>Updates / News</h3>
+                            <div class="clearfix">
+                                <div class="post clearfix">
+                                    <%= image_tag("other/news.png", :alt => "Logo") %>
+                                    <div class="info">
+                                        <a href="#"><h5>Admissions open for 2017</h5></a>
+                                        <span>Posted on 07 dec 2016</span>
+                                        <p>Lorem ipsum dolor sit amet set..</p>
+                                    </div>
+                                </div>
+                                <div class="post clearfix ">
+                                    <%= image_tag("other/news.png", :alt => "Logo") %>
+                                    <div class="info">
+                                        <a href="#"><h5>We are Hiring!</h5></a>
+                                        <span>Posted on 26 dec 2016</span>
+                                        <p>Lorem ipsum dolor sit amet set..</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact column c-30 clearfix ">
+                            <h3>Contact Form</h3>
+                            <input id="name" type="text" value="Name" />
+                            <input id="mail" type="text" value="Email" />
+                            <textarea id="message">Message</textarea>
+                            
+                            <input id="submit" class="submit" type="submit" value="Submit"/>
+                        </div>
+                    </div>
+                    <div id="bottomFooter">
+                        <p>© 2016 Global Edutech Trading & Consultancy. Creative Design by <em><a href="http://designsbynetguru.com">[Yinka Ash a.k.a Netguru]</a></em></p>
+                        
+                    </div>
+                </section>
+            </div>
+        </footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </body>
+</html>
