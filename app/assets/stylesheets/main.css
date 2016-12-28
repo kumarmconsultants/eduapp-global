@@ -1717,7 +1717,7 @@ tr:nth-child(odd) {
 	background-image: linear-gradient(bottom, #F2F1F1 0%, #ffffff 100%);
 	background-image: -o-linear-gradient(bottom, #F2F1F1 0%, #ffffff 100%);
 	background-image: -moz-linear-gradient(bottom, #F2F1F1 0%, #ffffff 100%);
-	background-image: -webkit-linear-gradient(bottom, #F2F1F1 0%, #ffffff) 100%);
+	background-image: -webkit-linear-gradient(bottom, #F2F1F1 0%, #ffffff 100%);
 	background-image: -ms-linear-gradient(bottom, #F2F1F1 0%, #ffffff 100%);
 	cursor:pointer;
 }
