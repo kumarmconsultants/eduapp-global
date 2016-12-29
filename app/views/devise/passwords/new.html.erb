@@ -2,16 +2,17 @@
         <div id="content">
             <div class="topImg clearfix">
                 <%= image_tag("headers/header_1.jpg", :alt => "About Us") %>
-                <p>Contact <strong>Us</strong></p>
+                <p>Forgot Your <strong>Password?</strong></p>
             </div>
                 <div class="wrapper">
+                <%= devise_error_messages! %>
                  <div class="boxInfo contactForm apply-now">
 
 
                     <h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+  
 
   <div class="field">
     <%= f.label :email %><br />
