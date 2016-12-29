@@ -39,7 +39,7 @@ en:
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "Your account is not yet activated."
       signed_up_but_locked: "Your account is locked!"
-      signed_up_but_unconfirmed: "Please follow the link in your email to activate your account."
+      signed_up_but_unconfirmed: "Please open the link in your email to activate your account."
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
     sessions:
