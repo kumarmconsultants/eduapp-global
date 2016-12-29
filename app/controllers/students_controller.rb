@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /students
   # GET /students.json
@@ -28,7 +29,7 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.save
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Application Received! We will contact you shortly.' }
         format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new }
