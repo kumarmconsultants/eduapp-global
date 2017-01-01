@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :agents
   devise_for :users
   resources :students
-  resources :agents
   resources :levels
   resources :courses
   root 'welcome#index'
+
+  get  'users/sign_up'   => 'users/registrations#new'
+
+  
 
   get 'about' => 'welcome#about'
 
