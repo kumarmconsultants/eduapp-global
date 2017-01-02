@@ -92,10 +92,18 @@ N0, 518A, 3re Mile Jalan Ipoh 52100 <br />Kuala Lumpur, Malaysia</h4>
                         <div class="links column c-30 clearfix ">
                             <h3>Quick Links</h3>
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Apply Online</a></li>
-                                <li><a href="#">Application Status</a></li>
-                                <li><a href="#">About Us</a></li>
+                            <% if user_signed_in? %>
+                            <li><%= link_to 'Online Application', apply_online_path %> </li>
+                            <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+                            <% elsif agent_signed_in? %>
+                                <li><%= link_to 'Online Application', contact_path %> </li>
+                                <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+                            <% else %>
+                                <li><%= link_to 'Apply Online', new_user_registration_path %> </li>
+                                <li><%= link_to 'Agents', new_agent_session_path %></li>
+                            <% end %>
+                            <li><%= link_to 'About Us', about_path %></li>
+                            <li><%= link_to 'Application Status', contact_path %></li>
                             </ul>
                         </div>
 
