@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
   devise_for :agents, controllers: {
         sessions: 'agents/sessions',
         registrations: 'agents/registrations'
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
 
   get  'users/sign_up'   => 'users/registrations#new'
 
+  
   
 
   get 'about' => 'welcome#about'

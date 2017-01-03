@@ -1,6 +1,10 @@
 class LevelsController < ApplicationController
   before_action :set_level, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!
+  before_filter do 
+    redirect_to new_user_session_path unless current_user && current_user.admin?
+  end
   # GET /levels
   # GET /levels.json
   def index

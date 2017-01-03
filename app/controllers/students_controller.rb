@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_filter :ensure_admin, only: [:index]
 
   # GET /students
   # GET /students.json
@@ -71,5 +71,11 @@ class StudentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
       params.require(:student).permit(:fname, :lname, :level_id, :course_id, :nationality, :email, :phone, :countryloc)
+    end
+
+    def ensure_admin
+      unless current_user && current_user.admin?
+       render :text => "What are you doing with your life?", :status => :unauthorized
+      end
     end
 end
