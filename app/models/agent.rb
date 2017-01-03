@@ -13,6 +13,6 @@ end
 class Agent::ParameterSanitizer < Devise::ParameterSanitizer
   def initialize(*)
     super
-    permit(:sign_up, keys: [:name, :country, :phone])
+    permit(:sign_up, keys: [:name, :country, :phone, :email, :password, :password_confirmation])
   end
 end

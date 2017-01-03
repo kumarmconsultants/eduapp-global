@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :agents
-  devise_for :users
+  
+
+  devise_for :agents, controllers: {
+        sessions: 'agents/sessions',
+        registrations: 'agents/registrations'
+      }
+  devise_for :users, controllers: {
+        sessions: 'users/sessions',
+        registrations: 'users/registrations'
+      }
   resources :students
   resources :levels
   resources :courses
+
   root 'welcome#index'
 
   get  'users/sign_up'   => 'users/registrations#new'

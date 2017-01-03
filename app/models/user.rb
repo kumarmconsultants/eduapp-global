@@ -13,6 +13,6 @@ end
 class User::ParameterSanitizer < Devise::ParameterSanitizer
   def initialize(*)
     super
-    permit(:sign_up, keys: [:firstname, :lastname])
+    permit(:sign_up, keys: [:firstname, :lastname, :email, :password, :password_confirmation])
   end
 end
