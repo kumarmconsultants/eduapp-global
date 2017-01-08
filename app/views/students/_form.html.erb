@@ -14,42 +14,42 @@
 
 
   <div class="field">
-    <%= f.label :'First Name' %>
+    <%= f.label :'fname', "First Name" %>
     <%= f.text_field :fname %>
   </div>
 
   <div class="field">
-    <%= f.label :'Last Name' %>
+    <%= f.label :'lname', "Last Name" %>
     <%= f.text_field :lname %>
   </div>
 
   <div class="field">
-    <%= f.label :'Degree Level'  %>
+    <%= f.label :'leveltype', "Degree Level"  %>
     <%= f.collection_select(:level_id, Level.all, :id, :leveltype, prompt: "Select A Degree Type", :class => 'net-select') %>
    </div>
 
   <div class="field">
-    <%= f.label :'Courses' %>
+    <%= f.label :'coursename', "Courses" %>
     <%= f.collection_select(:course_id, Course.all, :id, :coursename, prompt: "Select Course", :class => 'net-select') %>
   </div>
 
   <div class="field">
-    <%= f.label :'Nationality' %>
+    <%= f.label :'nationality', "Nationality" %>
     <%= f.country_select :nationality, prompt: "Country of Origin", :class => 'net-select' %>
   </div>
 
   <div class="field">
-    <%= f.label :'Country of Choice' %>
+    <%= f.label :'countryloc', "Country of Choice" %>
     <%= f.country_select :countryloc, prompt: "Where Would You Like to Study?", :class => 'net-select' %>
   </div>
 
   <div class="field">
-    <%= f.label :'Email' %>
+    <%= f.label :'email', "Email Address" %>
     <%= f.text_field :email %>
   </div>
 
   <div class="field">
-    <%= f.label :'Phone' %>
+    <%= f.label :'phone', "Phone Number" %>
     <%= f.text_field :phone %>
   </div>
 
